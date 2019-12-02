@@ -12,7 +12,7 @@ namespace ContainerVervoer
 {
     public partial class Form1 : Form
     {
-        Ship _ship = new Ship();
+        Ship _ship = new Ship(0, 0);
 
         public Form1()
         {
@@ -35,7 +35,8 @@ namespace ContainerVervoer
 
         private void StartSort_Click(object sender, EventArgs e)
         {
-            // apart
+            _ship.Length = Convert.ToInt32(shipLengthSelector.Text);
+            _ship.Width = Convert.ToInt32(shipWidthSelector.Text);
 
             foreach (var container in _ship.containersToSort)
             {

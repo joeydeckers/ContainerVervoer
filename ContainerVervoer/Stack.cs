@@ -84,5 +84,11 @@ namespace ContainerVervoer
                 Containers.Add(valuableContainer);
             }
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
+
 }
