@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ContainerVervoer
 {
@@ -23,11 +24,15 @@ namespace ContainerVervoer
 
         public bool SetStack(Stack stackToSort)
         {
-            if (!CheckStackIfCooled(stackToSort))
-            {
-                return false;
-            }
+            //if (!CheckStackIfCooled(stackToSort))
+            //{
+            //    return false;
+            //}
+ 
+            
             stacks.Add(stackToSort);
+
+            
             return true;
         }
 

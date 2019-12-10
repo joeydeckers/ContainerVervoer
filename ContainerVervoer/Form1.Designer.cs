@@ -41,14 +41,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.shipLengthSelector = new System.Windows.Forms.TextBox();
             this.shipWidthSelector = new System.Windows.Forms.TextBox();
+            this.containerGenerator = new System.Windows.Forms.Button();
+            this.stackList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // addContainer
             // 
-            this.addContainer.Location = new System.Drawing.Point(92, 477);
-            this.addContainer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addContainer.Location = new System.Drawing.Point(61, 310);
             this.addContainer.Name = "addContainer";
-            this.addContainer.Size = new System.Drawing.Size(182, 35);
+            this.addContainer.Size = new System.Drawing.Size(121, 23);
             this.addContainer.TabIndex = 0;
             this.addContainer.Text = "Add containers";
             this.addContainer.UseVisualStyleBackColor = true;
@@ -57,45 +58,39 @@
             // valueSetter
             // 
             this.valueSetter.FormattingEnabled = true;
-            this.valueSetter.Location = new System.Drawing.Point(92, 260);
-            this.valueSetter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.valueSetter.Location = new System.Drawing.Point(61, 169);
             this.valueSetter.Name = "valueSetter";
-            this.valueSetter.Size = new System.Drawing.Size(180, 28);
+            this.valueSetter.Size = new System.Drawing.Size(121, 21);
             this.valueSetter.TabIndex = 1;
             // 
             // cooledSetter
             // 
             this.cooledSetter.FormattingEnabled = true;
-            this.cooledSetter.Location = new System.Drawing.Point(92, 337);
-            this.cooledSetter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cooledSetter.Location = new System.Drawing.Point(61, 219);
             this.cooledSetter.Name = "cooledSetter";
-            this.cooledSetter.Size = new System.Drawing.Size(180, 28);
+            this.cooledSetter.Size = new System.Drawing.Size(121, 21);
             this.cooledSetter.TabIndex = 2;
             // 
             // weightSetter
             // 
-            this.weightSetter.Location = new System.Drawing.Point(92, 414);
-            this.weightSetter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.weightSetter.Location = new System.Drawing.Point(61, 269);
             this.weightSetter.Name = "weightSetter";
-            this.weightSetter.Size = new System.Drawing.Size(180, 26);
+            this.weightSetter.Size = new System.Drawing.Size(121, 20);
             this.weightSetter.TabIndex = 3;
             // 
             // containersToSortList
             // 
             this.containersToSortList.FormattingEnabled = true;
-            this.containersToSortList.ItemHeight = 20;
-            this.containersToSortList.Location = new System.Drawing.Point(468, 134);
-            this.containersToSortList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.containersToSortList.Location = new System.Drawing.Point(215, 67);
             this.containersToSortList.Name = "containersToSortList";
-            this.containersToSortList.Size = new System.Drawing.Size(370, 164);
+            this.containersToSortList.Size = new System.Drawing.Size(248, 108);
             this.containersToSortList.TabIndex = 4;
             // 
             // startSort
             // 
-            this.startSort.Location = new System.Drawing.Point(92, 538);
-            this.startSort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.startSort.Location = new System.Drawing.Point(61, 350);
             this.startSort.Name = "startSort";
-            this.startSort.Size = new System.Drawing.Size(182, 35);
+            this.startSort.Size = new System.Drawing.Size(121, 23);
             this.startSort.TabIndex = 5;
             this.startSort.Text = "Create stacks";
             this.startSort.UseVisualStyleBackColor = true;
@@ -104,10 +99,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(92, 231);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(61, 150);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
+            this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Set Value";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
@@ -115,60 +109,82 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 312);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(58, 203);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 20);
+            this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 7;
             this.label2.Text = "Set Cooled";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(92, 389);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(61, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Set weight";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(87, 80);
+            this.label4.Location = new System.Drawing.Point(58, 52);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 20);
+            this.label4.Size = new System.Drawing.Size(60, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Ship length";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(87, 161);
+            this.label5.Location = new System.Drawing.Point(58, 105);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 20);
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Ship width";
             // 
             // shipLengthSelector
             // 
-            this.shipLengthSelector.Location = new System.Drawing.Point(91, 103);
+            this.shipLengthSelector.Location = new System.Drawing.Point(61, 67);
+            this.shipLengthSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.shipLengthSelector.Name = "shipLengthSelector";
-            this.shipLengthSelector.Size = new System.Drawing.Size(181, 26);
+            this.shipLengthSelector.Size = new System.Drawing.Size(122, 20);
             this.shipLengthSelector.TabIndex = 11;
             // 
             // shipWidthSelector
             // 
-            this.shipWidthSelector.Location = new System.Drawing.Point(91, 184);
+            this.shipWidthSelector.Location = new System.Drawing.Point(61, 120);
+            this.shipWidthSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.shipWidthSelector.Name = "shipWidthSelector";
-            this.shipWidthSelector.Size = new System.Drawing.Size(181, 26);
+            this.shipWidthSelector.Size = new System.Drawing.Size(122, 20);
             this.shipWidthSelector.TabIndex = 12;
+            // 
+            // containerGenerator
+            // 
+            this.containerGenerator.Location = new System.Drawing.Point(342, 265);
+            this.containerGenerator.Name = "containerGenerator";
+            this.containerGenerator.Size = new System.Drawing.Size(232, 86);
+            this.containerGenerator.TabIndex = 13;
+            this.containerGenerator.Text = "Generate containers";
+            this.containerGenerator.UseVisualStyleBackColor = true;
+            this.containerGenerator.Click += new System.EventHandler(this.ContainerGenerator_Click);
+            // 
+            // stackList
+            // 
+            this.stackList.FormattingEnabled = true;
+            this.stackList.Location = new System.Drawing.Point(494, 67);
+            this.stackList.Name = "stackList";
+            this.stackList.Size = new System.Drawing.Size(277, 108);
+            this.stackList.TabIndex = 14;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.stackList);
+            this.Controls.Add(this.containerGenerator);
             this.Controls.Add(this.shipWidthSelector);
             this.Controls.Add(this.shipLengthSelector);
             this.Controls.Add(this.label5);
@@ -182,7 +198,6 @@
             this.Controls.Add(this.cooledSetter);
             this.Controls.Add(this.valueSetter);
             this.Controls.Add(this.addContainer);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -205,6 +220,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox shipLengthSelector;
         private System.Windows.Forms.TextBox shipWidthSelector;
+        private System.Windows.Forms.Button containerGenerator;
+        private System.Windows.Forms.ListBox stackList;
     }
 }
 

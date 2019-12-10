@@ -21,15 +21,18 @@ namespace ContainerVervoer
             Width = width;
         }
 
-        public void AddContainer(bool valuable, bool cooled, int weight)
+        public void AddContainer(int valuable, int cooled, int weight)
         {
-            if (weight > 30000)
+            if (weight > 26000)
             {
                 MessageBox.Show("Too heavy! Try a smaller size");
             }
             else
             {
-                containersToSort.Add(new Container(valuable, cooled, weight));
+                bool valuableToParse = Convert.ToBoolean(valuable);
+                bool cooledToParse = Convert.ToBoolean(cooled);
+
+                containersToSort.Add(new Container(valuableToParse, cooledToParse, weight));
             }
         }
 
@@ -37,7 +40,7 @@ namespace ContainerVervoer
         {
             while (containersToSort.Count() > 0)
             {
-                var newStack = new Stack();
+                Stack newStack = new Stack();
                 stacks.Add(newStack);
 
                 foreach (var container in containersToSort.ToList()) {
@@ -47,21 +50,10 @@ namespace ContainerVervoer
                     }
                 }
             }
+            MessageBox.Show(stacks.Count().ToString());
 
-            //MessageBox.Show(stacks.Count.ToString());
-            CreateRows();
-
-            while(stacks.Count() > 0)
-            {
-                foreach(Stack stack in stacks)
-                {
-                    if (SortRows(stack))
-                    {
-                        stacks.Remove(stack);
-                    }
-                }
-            }
-            MessageBox.Show("done");
+            //CreateRows();
+            //AddStackToRow();
         }
 
         private void CreateRows()
@@ -81,16 +73,32 @@ namespace ContainerVervoer
             }
         }
 
-        private bool SortRows(Stack stack)
+        private void AddStackToRow()
         {
-           foreach(Row row in rows)
-            {
-                if (row.SetStack(stack))
+            while (stacks.Count() > 0) {
+                if (rows.Find(rowToCheck => (rowToCheck.IsCooledRow)) != null)
                 {
-                    return true;
+                    Row cooledRow = rows.Find(x => x.IsCooledRow == true);
+                    foreach (var stack in stacks.ToList())
+                    {
+
+                        if (stack.ContainsCooled == true)
+                        {
+                            cooledRow.SetStack(stack);
+                            //MessageBox.Show("success");
+                            //stacks.Remove(stack);
+                        }
+                        else
+                        {
+
+                        }
+                        stacks.Remove(stack);
+
+                    }
+
                 }
             }
-            return false;
+
         }
 
         public override string ToString()

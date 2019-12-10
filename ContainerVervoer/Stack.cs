@@ -14,13 +14,14 @@ namespace ContainerVervoer
         public bool ContainsCooled { get; internal set; }
         public bool ContainsValuable { get; internal set; }
 
+        // hier moet ook komen of de stack links of rechts zit
+
         public List<Container> Containers = new List<Container>();
 
         public bool AddToStack(Container container)
         {
             if (!CheckStackWeight(container))
             {
-
                 return false;
             }
 
@@ -33,7 +34,7 @@ namespace ContainerVervoer
             CheckIfContainerIsValuable(container);
             CheckIfContainerIsCooled(container);
             SetValuableContainerOnTop();
-            //MessageBox.Show(ContainsCooled.ToString() + ContainsValuable.ToString());
+            //MessageBox.Show(StackWeight.ToString());
             return true;
         }
 
@@ -44,6 +45,13 @@ namespace ContainerVervoer
             {
                 return false;
             }
+
+            if(StackWeight > 120000)
+            {
+                return false;
+            }
+            MessageBox.Show(StackWeight.ToString());
+
             return true;
         }
 
@@ -77,7 +85,7 @@ namespace ContainerVervoer
         {
             if (Containers.Find(containerToCheck => (containerToCheck.IsValuable)) != null)
             {
-                var valuableContainer = Containers.Find(x => x.IsValuable == true);
+                Container valuableContainer = Containers.Find(x => x.IsValuable == true);
                 //MessageBox.Show(valuableContainer.ToString());
 
                 Containers.Remove(valuableContainer);
@@ -87,7 +95,7 @@ namespace ContainerVervoer
 
         public override string ToString()
         {
-            return base.ToString();
+            return "Gewicht: " + StackWeight.ToString() + "  " + "Gekoeld: " + ContainsCooled.ToString() + "  " + "Waardevol: "  + ContainsValuable.ToString();
         }
     }
 
