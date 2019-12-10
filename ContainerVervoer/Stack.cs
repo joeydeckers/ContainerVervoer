@@ -42,6 +42,7 @@ namespace ContainerVervoer
                 Containers.Add(container);
                 CheckIfContainerIsValuable(container);
                 CheckIfContainerIsCooled(container);
+                SetValuableContainerOnTop();
             }
 
 
@@ -100,7 +101,7 @@ namespace ContainerVervoer
             if (Containers.Find(containerToCheck => (containerToCheck.IsValuable)) != null)
             {
                 Container valuableContainer = Containers.Find(x => x.IsValuable == true);
-                MessageBox.Show(valuableContainer.ToString());
+                //nMessageBox.Show(valuableContainer.ToString());
 
                 Containers.Remove(valuableContainer);
                 Containers.Add(valuableContainer);

@@ -52,8 +52,8 @@ namespace ContainerVervoer
                 stacks.Add(newStack);
 
             }
-
-            //CreateRows();
+            // aparte row sort knop maken
+            CreateRows();
             //AddStackToRow();
         }
 
