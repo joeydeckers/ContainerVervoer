@@ -41,16 +41,18 @@ namespace ContainerVervoer
             while (containersToSort.Count() > 0)
             {
                 Stack newStack = new Stack();
-                stacks.Add(newStack);
 
                 foreach (var container in containersToSort.ToList()) {
                     if (newStack.AddToStack(container))
                     {
+                        //MessageBox.Show(container.Weight.ToString());
                         containersToSort.Remove(container);
                     }
                 }
+
+                stacks.Add(newStack);
+
             }
-            MessageBox.Show(stacks.Count().ToString());
 
             //CreateRows();
             //AddStackToRow();

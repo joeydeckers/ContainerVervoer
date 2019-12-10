@@ -20,20 +20,29 @@ namespace ContainerVervoer
 
         public bool AddToStack(Container container)
         {
+            if (container.IsValuable == true)
+            {
+                if (!CheckIfStackContainsValuableContainer())
+                {
+                    //MessageBox.Show("Found belangrijks");
+
+                    return false;
+                }
+            }
+   
+
             if (!CheckStackWeight(container))
             {
+               // MessageBox.Show(StackWeight.ToString());
                 return false;
             }
 
-            if (!CheckIfStackContainsValuableContainer())
-            {
-                return false;
-            }
+
 
             Containers.Add(container);
             CheckIfContainerIsValuable(container);
             CheckIfContainerIsCooled(container);
-            SetValuableContainerOnTop();
+            //SetValuableContainerOnTop();
             //MessageBox.Show(StackWeight.ToString());
             return true;
         }
@@ -50,8 +59,8 @@ namespace ContainerVervoer
             {
                 return false;
             }
-            MessageBox.Show(StackWeight.ToString());
-
+            // StackWeight += containerToCheck.Weight;
+            //MessageBox.Show(StackWeight.ToString());
             return true;
         }
 
@@ -86,7 +95,7 @@ namespace ContainerVervoer
             if (Containers.Find(containerToCheck => (containerToCheck.IsValuable)) != null)
             {
                 Container valuableContainer = Containers.Find(x => x.IsValuable == true);
-                //MessageBox.Show(valuableContainer.ToString());
+                MessageBox.Show(valuableContainer.ToString());
 
                 Containers.Remove(valuableContainer);
                 Containers.Add(valuableContainer);
