@@ -22,9 +22,10 @@ namespace ContainerVervoer
         {
             if (container.IsValuable == true)
             {
+                //MessageBox.Show("Found belangrijks");
+
                 if (!CheckIfStackContainsValuableContainer())
                 {
-                    //MessageBox.Show("Found belangrijks");
 
                     return false;
                 }
@@ -33,15 +34,19 @@ namespace ContainerVervoer
 
             if (!CheckStackWeight(container))
             {
-               // MessageBox.Show(StackWeight.ToString());
+                //MessageBox.Show(StackWeight.ToString());
                 return false;
+            }
+            else
+            {
+                Containers.Add(container);
+                CheckIfContainerIsValuable(container);
+                CheckIfContainerIsCooled(container);
             }
 
 
 
-            Containers.Add(container);
-            CheckIfContainerIsValuable(container);
-            CheckIfContainerIsCooled(container);
+
             //SetValuableContainerOnTop();
             //MessageBox.Show(StackWeight.ToString());
             return true;
@@ -50,16 +55,16 @@ namespace ContainerVervoer
         private bool CheckStackWeight(Container containerToCheck)
         {
 
-            if ((StackWeight += containerToCheck.Weight ) > 120000)
-            {
-                return false;
-            }
+            //if ((StackWeight += containerToCheck.Weight ) > 120000)
+            //{
+            //    return false;
+            //}
 
-            if(StackWeight > 120000)
+            if(StackWeight + containerToCheck.Weight > 120000)
             {
                 return false;
             }
-            // StackWeight += containerToCheck.Weight;
+            StackWeight = StackWeight + containerToCheck.Weight;
             //MessageBox.Show(StackWeight.ToString());
             return true;
         }

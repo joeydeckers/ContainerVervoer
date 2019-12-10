@@ -57,7 +57,7 @@ namespace ContainerVervoer
         private void ContainerGenerator_Click(object sender, EventArgs e)
         {
             var rand = new Random();
-            for (int i = 0; i < 8; i++) {
+            for (int i = 0; i < 55; i++) {
                 _ship.AddContainer(rand.Next(0, 2), rand.Next(0, 2), rand.Next(500, 26000));
             }
 

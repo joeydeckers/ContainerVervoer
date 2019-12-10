@@ -49,7 +49,6 @@ namespace ContainerVervoer
                         containersToSort.Remove(container);
                     }
                 }
-
                 stacks.Add(newStack);
 
             }
