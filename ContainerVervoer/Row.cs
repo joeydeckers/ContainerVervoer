@@ -28,11 +28,25 @@ namespace ContainerVervoer
             //{
             //    return false;
             //}
+
+            if (!CheckIfStackFitsInRowSize())
+            {
+                return false;
+            }
  
             
             stacks.Add(stackToSort);
 
             
+            return true;
+        }
+
+        private bool CheckIfStackFitsInRowSize()
+        {
+            if (MaxRows == stacks.Count())
+            {
+                return false;
+            }
             return true;
         }
 

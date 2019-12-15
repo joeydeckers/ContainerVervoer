@@ -10,11 +10,14 @@ namespace ContainerVervoerUnitTests
         [TestMethod]
         public void AddContainerToStackResultToBeTrue()
         {
+            // Arrange
             var testStack = new Stack();
             var testContainer = new Container(true, false, 5000);
 
+            //act
             bool resultToBeTrue = testStack.AddToStack(testContainer);
 
+            //assert
             Assert.IsTrue(resultToBeTrue);
         }
 

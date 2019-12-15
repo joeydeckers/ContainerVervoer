@@ -19,6 +19,7 @@ namespace ContainerVervoer
         {
             Length = length;
             Width = width;
+            CreateRows();
         }
 
         public void AddContainer(int valuable, int cooled, int weight)
@@ -53,7 +54,6 @@ namespace ContainerVervoer
 
             }
             // aparte row sort knop maken
-            CreateRows();
             //AddStackToRow();
         }
 
