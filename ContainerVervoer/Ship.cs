@@ -10,6 +10,7 @@ namespace ContainerVervoer
     public class Ship
     {
         public List<Container> containersToSort = new List<Container>();
+        // deze moet weg
         public List<Stack> stacks = new List<Stack>();
         public List<Row> rows = new List<Row>();
         public int Length { get; internal set; }
