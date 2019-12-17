@@ -13,7 +13,7 @@ namespace ContainerVervoer
 {
     public partial class Form1 : Form
     {
-        Ship _ship = new Ship(0, 0);
+        Ship _ship = new Ship(10, 6);
 
         public Form1()
         {
@@ -57,7 +57,7 @@ namespace ContainerVervoer
         private void ContainerGenerator_Click(object sender, EventArgs e)
         {
             var rand = new Random();
-            for (int i = 0; i < 100; i++) {
+            for (int i = 0; i < 24; i++) {
                 _ship.AddContainer(rand.Next(0, 2), rand.Next(0, 2), rand.Next(500, 26000));
             }
 
@@ -65,6 +65,22 @@ namespace ContainerVervoer
             {
                 containersToSortList.Items.Add(container.ToString());
             }
+            
+        }
+
+        private void CreateRows_Click(object sender, EventArgs e)
+        {
+            _ship.AddStackToRow();
+
+            foreach(var row in _ship.rows)
+            {
+                rowsList.Items.Add(row.ToString());
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

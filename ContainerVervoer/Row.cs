@@ -13,30 +13,51 @@ namespace ContainerVervoer
 
         public int Id { get; set; }
         public bool IsCooledRow { get; set; }
+        public bool IsValuableRow { get; set; }
         public int Weight { get; internal set; }
-        public int MaxRows { get; set; }
-        public Row(int id, int maxRows, bool IsCooled)
+        public int MaxContainers { get; set; }
+        public Row(int id, int maxContainers, bool isCooled, bool isValuableRow)
         {
             Id = id;
-            MaxRows = maxRows;
-            IsCooledRow = IsCooled;
+            MaxContainers = maxContainers;
+            IsCooledRow = isCooled;
+            IsValuableRow = isValuableRow;
         }
 
         public bool SetStack(Stack stackToSort)
         {
-            //if (!CheckStackIfCooled(stackToSort))
-            //{
-            //    return false;
-            //}
- 
-            
-            stacks.Add(stackToSort);
 
-            
+            if (!CheckSpaceInRow())
+            {
+                return false;
+            }
+
+            if (SetStackOnCooledRow(stackToSort))
+            { 
+                Weight = Weight + stackToSort.StackWeight;
+                stacks.Add(stackToSort);
+                return true;
+            }
+
+            if (stackToSort.ContainsValuable)
+            {
+                if (SetValuableStack(stackToSort))
+                {
+                    Weight = Weight + stackToSort.StackWeight;
+                    stacks.Add(stackToSort);
+                    return true;
+                }
+                return false;
+            }
+
+
+            Weight = Weight + stackToSort.StackWeight;
+            //MessageBox.Show(Weight.ToString());
+            stacks.Add(stackToSort);
             return true;
         }
 
-        private bool CheckStackIfCooled(Stack stackToSort)
+        private bool SetStackOnCooledRow(Stack stackToSort)
         {
             if(stackToSort.ContainsCooled == true)
             {
@@ -46,6 +67,34 @@ namespace ContainerVervoer
                 }
             }
             return false;
+        }
+
+        private bool CheckSpaceInRow()
+        {
+            if (stacks.Count() >= MaxContainers)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool SetValuableStack(Stack stackToSort)
+        {
+            if (IsValuableRow == true)
+            {
+                if (stackToSort.ContainsValuable)
+                {
+                    //MessageBox.Show(Id.ToString());
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public override string ToString()
+        {
+            return "Size: " + stacks.Count.ToString() + "weight: " + Weight.ToString() + " position: " + Id.ToString();
         }
 
     }

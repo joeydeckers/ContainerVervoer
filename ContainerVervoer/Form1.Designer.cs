@@ -43,6 +43,8 @@
             this.shipWidthSelector = new System.Windows.Forms.TextBox();
             this.containerGenerator = new System.Windows.Forms.Button();
             this.stackList = new System.Windows.Forms.ListBox();
+            this.createRows = new System.Windows.Forms.Button();
+            this.rowsList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // addContainer
@@ -147,7 +149,7 @@
             // shipLengthSelector
             // 
             this.shipLengthSelector.Location = new System.Drawing.Point(61, 67);
-            this.shipLengthSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.shipLengthSelector.Margin = new System.Windows.Forms.Padding(2);
             this.shipLengthSelector.Name = "shipLengthSelector";
             this.shipLengthSelector.Size = new System.Drawing.Size(122, 20);
             this.shipLengthSelector.TabIndex = 11;
@@ -155,14 +157,14 @@
             // shipWidthSelector
             // 
             this.shipWidthSelector.Location = new System.Drawing.Point(61, 120);
-            this.shipWidthSelector.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.shipWidthSelector.Margin = new System.Windows.Forms.Padding(2);
             this.shipWidthSelector.Name = "shipWidthSelector";
             this.shipWidthSelector.Size = new System.Drawing.Size(122, 20);
             this.shipWidthSelector.TabIndex = 12;
             // 
             // containerGenerator
             // 
-            this.containerGenerator.Location = new System.Drawing.Point(342, 265);
+            this.containerGenerator.Location = new System.Drawing.Point(231, 287);
             this.containerGenerator.Name = "containerGenerator";
             this.containerGenerator.Size = new System.Drawing.Size(232, 86);
             this.containerGenerator.TabIndex = 13;
@@ -178,11 +180,31 @@
             this.stackList.Size = new System.Drawing.Size(277, 108);
             this.stackList.TabIndex = 14;
             // 
+            // createRows
+            // 
+            this.createRows.Location = new System.Drawing.Point(64, 396);
+            this.createRows.Name = "createRows";
+            this.createRows.Size = new System.Drawing.Size(118, 23);
+            this.createRows.TabIndex = 15;
+            this.createRows.Text = "Create rows";
+            this.createRows.UseVisualStyleBackColor = true;
+            this.createRows.Click += new System.EventHandler(this.CreateRows_Click);
+            // 
+            // rowsList
+            // 
+            this.rowsList.FormattingEnabled = true;
+            this.rowsList.Location = new System.Drawing.Point(494, 194);
+            this.rowsList.Name = "rowsList";
+            this.rowsList.Size = new System.Drawing.Size(277, 108);
+            this.rowsList.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rowsList);
+            this.Controls.Add(this.createRows);
             this.Controls.Add(this.stackList);
             this.Controls.Add(this.containerGenerator);
             this.Controls.Add(this.shipWidthSelector);
@@ -200,6 +222,7 @@
             this.Controls.Add(this.addContainer);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,6 +245,8 @@
         private System.Windows.Forms.TextBox shipWidthSelector;
         private System.Windows.Forms.Button containerGenerator;
         private System.Windows.Forms.ListBox stackList;
+        private System.Windows.Forms.Button createRows;
+        private System.Windows.Forms.ListBox rowsList;
     }
 }
 

@@ -54,53 +54,39 @@ namespace ContainerVervoer
                 stacks.Add(newStack);
 
             }
-            // aparte row sort knop maken
-            //AddStackToRow();
         }
 
         private void CreateRows()
         {
             for (int i = 0; i < Length; i++)
             {   
-                if(i == 0)
+                if(i == 0 || i == Length-1)
                 {
-                    Row row = new Row(i, Width, true);
+                    Row row = new Row(i, Width, true, true);
                     rows.Add(row);
                 }
                 else
                 {
-                    Row row = new Row(i, Width, false);
+                    Row row = new Row(i, Width, false, false);
                     rows.Add(row);
                 }
             }
         }
 
-        private void AddStackToRow()
+        public void AddStackToRow()
         {
-            while (stacks.Count() > 0) {
-                if (rows.Find(rowToCheck => (rowToCheck.IsCooledRow)) != null)
+            foreach (var row in rows)
+            {
+                foreach (var stack in stacks.ToList())
                 {
-                    Row cooledRow = rows.Find(x => x.IsCooledRow == true);
-                    foreach (var stack in stacks.ToList())
+                    //MessageBox.Show(stack.StackWeight.ToString());
+                    if (row.SetStack(stack))
                     {
-
-                        if (stack.ContainsCooled == true)
-                        {
-                            cooledRow.SetStack(stack);
-                            //MessageBox.Show("success");
-                            //stacks.Remove(stack);
-                        }
-                        else
-                        {
-
-                        }
                         stacks.Remove(stack);
-
                     }
-
                 }
             }
-
+  
         }
 
         public override string ToString()
