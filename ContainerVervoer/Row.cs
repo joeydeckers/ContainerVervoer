@@ -16,6 +16,10 @@ namespace ContainerVervoer
         public bool IsValuableRow { get; set; }
         public int Weight { get; internal set; }
         public int MaxContainers { get; set; }
+        public bool IsinBalance { get; set; }
+        public int LeftWeight { get; set; }
+        public int RightWeight { get; set; }
+
         public Row(int id, int maxContainers, bool isCooled, bool isValuableRow)
         {
             Id = id;
@@ -26,7 +30,6 @@ namespace ContainerVervoer
 
         public bool SetStack(Stack stackToSort)
         {
-
             if (!CheckSpaceInRow())
             {
                 return false;
@@ -49,11 +52,12 @@ namespace ContainerVervoer
                 }
                 return false;
             }
+            else
+            {
+                Weight = Weight + stackToSort.StackWeight;
+                stacks.Add(stackToSort);
+            }
 
-
-            Weight = Weight + stackToSort.StackWeight;
-            //MessageBox.Show(Weight.ToString());
-            stacks.Add(stackToSort);
             return true;
         }
 
@@ -90,6 +94,26 @@ namespace ContainerVervoer
             }
 
             return false;
+        }
+
+        public void SetLeftWeight()
+        {
+            var stacksToWeigh = stacks.Take(stacks.Count() /2);
+
+            foreach(var stackToWeigh in stacksToWeigh)
+            {
+                LeftWeight = LeftWeight + stackToWeigh.StackWeight;
+            }
+        }
+
+        public void SetRightWeight()
+        {
+            var stacksToWeigh = stacks.Skip(stacks.Count() / 2);
+
+            foreach (var stackToWeigh in stacksToWeigh)
+            {
+                RightWeight = RightWeight + stackToWeigh.StackWeight;
+            }
         }
 
         public override string ToString()

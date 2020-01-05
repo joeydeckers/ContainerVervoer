@@ -11,10 +11,17 @@ namespace ContainerVervoer
     {
         public List<Container> containersToSort = new List<Container>();
         // deze moet weg
+        // Ik weet dat ik deze weg moet doen en de datastructuur veranderen. Hier had ik toch iets meer moeite mee dan verwacht. Hopelijk weet ik dit in de vakantie te fixen:)
+        // Voor deze oplevering haal ik het helaas net niet.
         public List<Stack> stacks = new List<Stack>();
         public List<Row> rows = new List<Row>();
         public int Length { get; internal set; }
         public int Width { get; internal set; }
+        public bool IsInBalance { get; internal set; }
+
+        public int TotalWeight { get; internal set; }
+        public int TotalWeightLeft { get; internal set; }
+        public int TotalWeightRight { get; internal set; } 
 
         public Ship(int length, int width)
         {
@@ -47,12 +54,11 @@ namespace ContainerVervoer
                 foreach (var container in containersToSort.ToList()) {
                     if (newStack.AddToStack(container))
                     {
-                        //MessageBox.Show(container.Weight.ToString());
+
                         containersToSort.Remove(container);
                     }
                 }
                 stacks.Add(newStack);
-
             }
         }
 
@@ -79,14 +85,50 @@ namespace ContainerVervoer
             {
                 foreach (var stack in stacks.ToList())
                 {
-                    //MessageBox.Show(stack.StackWeight.ToString());
                     if (row.SetStack(stack))
                     {
                         stacks.Remove(stack);
                     }
                 }
+                row.SetLeftWeight();
+                row.SetRightWeight();
             }
-  
+            CheckBalance();
+
+        }
+
+        private bool CheckBalance()
+        {
+            int lowesetSide;
+            int highestSide;
+            decimal balance;
+
+            foreach (Row row in rows)
+            {
+                TotalWeight = TotalWeight + (row.RightWeight + row.LeftWeight);
+                TotalWeightRight = TotalWeightRight + row.RightWeight;
+                TotalWeightLeft = TotalWeightLeft + row.LeftWeight;
+            }
+
+            if(TotalWeightLeft > TotalWeightRight)
+            {
+                lowesetSide = TotalWeightRight;
+                highestSide = TotalWeightLeft;
+            }
+            else
+            {
+                lowesetSide = TotalWeightLeft;
+                highestSide = TotalWeightRight;
+            }
+
+            balance = (highestSide - lowesetSide) / highestSide * 100;
+
+            if(balance > 20)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         public override string ToString()

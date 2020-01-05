@@ -10,9 +10,9 @@ namespace ContainerVervoer
     // hierin wordt het sorteren gedaan
     public class Stack
     {
-        public int StackWeight { get; internal set; }
-        public bool ContainsCooled { get; internal set; }
-        public bool ContainsValuable { get; internal set; }
+        public int StackWeight { get;  set; }
+        public bool ContainsCooled { get;  set; }
+        public bool ContainsValuable { get;  set; }
 
         // hier moet ook komen of de stack links of rechts zit
 
@@ -22,8 +22,7 @@ namespace ContainerVervoer
         {
             if (container.IsValuable == true)
             {
-                //MessageBox.Show("Found belangrijks");
-
+               
                 if (!CheckIfStackContainsValuableContainer())
                 {
 
@@ -34,7 +33,6 @@ namespace ContainerVervoer
 
             if (!CheckStackWeight(container))
             {
-                //MessageBox.Show(StackWeight.ToString());
                 return false;
             }
             else
@@ -45,28 +43,19 @@ namespace ContainerVervoer
                 SetValuableContainerOnTop();
             }
 
-
-
-
-            //SetValuableContainerOnTop();
-            //MessageBox.Show(StackWeight.ToString());
             return true;
         }
 
         private bool CheckStackWeight(Container containerToCheck)
         {
 
-            //if ((StackWeight += containerToCheck.Weight ) > 120000)
-            //{
-            //    return false;
-            //}
+
 
             if(StackWeight + containerToCheck.Weight > 120000)
             {
                 return false;
             }
             StackWeight = StackWeight + containerToCheck.Weight;
-            //MessageBox.Show(StackWeight.ToString());
             return true;
         }
 

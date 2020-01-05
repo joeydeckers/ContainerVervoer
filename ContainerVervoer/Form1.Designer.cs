@@ -45,6 +45,7 @@
             this.stackList = new System.Windows.Forms.ListBox();
             this.createRows = new System.Windows.Forms.Button();
             this.rowsList = new System.Windows.Forms.ListBox();
+            this.setShip = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addContainer
@@ -129,17 +130,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 52);
+            this.label4.Location = new System.Drawing.Point(491, 322);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 13);
+            this.label4.Size = new System.Drawing.Size(136, 13);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Ship length";
+            this.label4.Text = "Ship length (werkt nog niet)";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 105);
+            this.label5.Location = new System.Drawing.Point(491, 375);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
@@ -148,7 +149,7 @@
             // 
             // shipLengthSelector
             // 
-            this.shipLengthSelector.Location = new System.Drawing.Point(61, 67);
+            this.shipLengthSelector.Location = new System.Drawing.Point(494, 337);
             this.shipLengthSelector.Margin = new System.Windows.Forms.Padding(2);
             this.shipLengthSelector.Name = "shipLengthSelector";
             this.shipLengthSelector.Size = new System.Drawing.Size(122, 20);
@@ -156,7 +157,7 @@
             // 
             // shipWidthSelector
             // 
-            this.shipWidthSelector.Location = new System.Drawing.Point(61, 120);
+            this.shipWidthSelector.Location = new System.Drawing.Point(494, 390);
             this.shipWidthSelector.Margin = new System.Windows.Forms.Padding(2);
             this.shipWidthSelector.Name = "shipWidthSelector";
             this.shipWidthSelector.Size = new System.Drawing.Size(122, 20);
@@ -198,11 +199,22 @@
             this.rowsList.Size = new System.Drawing.Size(277, 108);
             this.rowsList.TabIndex = 16;
             // 
+            // setShip
+            // 
+            this.setShip.Location = new System.Drawing.Point(494, 415);
+            this.setShip.Name = "setShip";
+            this.setShip.Size = new System.Drawing.Size(75, 23);
+            this.setShip.TabIndex = 17;
+            this.setShip.Text = "Set ship";
+            this.setShip.UseVisualStyleBackColor = true;
+            this.setShip.Click += new System.EventHandler(this.SetShip_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.setShip);
             this.Controls.Add(this.rowsList);
             this.Controls.Add(this.createRows);
             this.Controls.Add(this.stackList);
@@ -247,6 +259,7 @@
         private System.Windows.Forms.ListBox stackList;
         private System.Windows.Forms.Button createRows;
         private System.Windows.Forms.ListBox rowsList;
+        private System.Windows.Forms.Button setShip;
     }
 }
 
