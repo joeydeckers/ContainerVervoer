@@ -15,3 +15,20 @@ C:\Users\JoeyD\Desktop\containerVervoer\ContainerVervoerUnitTests\obj\Debug\Cont
 C:\Users\JoeyD\Desktop\containerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.csproj.CopyComplete
 C:\Users\JoeyD\Desktop\containerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.dll
 C:\Users\JoeyD\Desktop\containerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.pdb
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\ContainerVervoerUnitTests.dll
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\ContainerVervoerUnitTests.pdb
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\ContainerVervoer.exe
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\ContainerVervoer.pdb
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\ContainerVervoer.exe.config
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.csprojAssemblyReference.cache
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.csproj.CoreCompileInputs.cache
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.csproj.CopyComplete
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.dll
+C:\Users\Joey Deckers\Documents\ContainerVervoer\ContainerVervoerUnitTests\obj\Debug\ContainerVervoerUnitTests.pdb
