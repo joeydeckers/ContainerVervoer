@@ -153,5 +153,26 @@ namespace ContainerVervoerUnitTests
             //assert
             Assert.IsFalse(result);
         }
+
+        [TestMethod]
+        public void SetLeftWeightTestResultToSucceed()
+        {
+            //arrange
+            Row testRow = new Row(2, 2, true, true);
+            Stack testStackToAdd = new Stack();
+            Stack testStackToAddTwo = new Stack();
+            testStackToAdd.AddToStack(new Container(false, false, 200));
+            testStackToAdd.AddToStack(new Container(false, false, 200));
+
+            testRow.SetStack(testStackToAdd);
+
+            testRow.SetLeftWeight();
+
+            //act
+            //bool result = testRow.SetStack(testStackToAdd);
+
+            //assert
+            Assert.AreEqual(8400, testStackToAdd.StackWeight);
+        }
     }
 }

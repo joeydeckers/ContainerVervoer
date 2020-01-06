@@ -125,9 +125,11 @@ namespace ContainerVervoer
 
             if(balance > 20)
             {
+                IsInBalance = false;
                 return false;
             }
 
+            IsInBalance = true;
             return true;
         }
 
