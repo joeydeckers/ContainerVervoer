@@ -164,15 +164,43 @@ namespace ContainerVervoerUnitTests
             testStackToAdd.AddToStack(new Container(false, false, 200));
             testStackToAdd.AddToStack(new Container(false, false, 200));
 
+            testStackToAddTwo.AddToStack(new Container(false, false, 200));
+            testStackToAddTwo.AddToStack(new Container(false, false, 200));
+
             testRow.SetStack(testStackToAdd);
+            testRow.SetStack(testStackToAddTwo);
+
+            //act
 
             testRow.SetLeftWeight();
 
+            //assert
+            Assert.AreEqual(8400, testRow.LeftWeight);
+        }
+
+        [TestMethod]
+        public void SetLeftWeightRightResultToSucceed()
+        {
+            //arrange
+            Row testRow = new Row(2, 2, true, true);
+            Stack testStackToAdd = new Stack();
+            Stack testStackToAddTwo = new Stack();
+            testStackToAdd.AddToStack(new Container(false, false, 200));
+            testStackToAdd.AddToStack(new Container(false, false, 200));
+
+            testStackToAddTwo.AddToStack(new Container(false, false, 200));
+            testStackToAddTwo.AddToStack(new Container(false, false, 200));
+
+            testRow.SetStack(testStackToAdd);
+            testRow.SetStack(testStackToAddTwo);
+
             //act
-            //bool result = testRow.SetStack(testStackToAdd);
+
+            testRow.SetRightWeight();
 
             //assert
-            Assert.AreEqual(8400, testStackToAdd.StackWeight);
+            Assert.AreEqual(8400, testRow.RightWeight);
         }
+
     }
 }
