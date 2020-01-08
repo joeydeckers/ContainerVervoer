@@ -130,6 +130,7 @@ namespace ContainerVervoer
             }
 
             IsInBalance = true;
+            MessageBox.Show("In balance!");
             return true;
         }
 
